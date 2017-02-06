@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <!-- <ion-header-bar class="bar bar-light red">
+    <div class="title">
+      {{procData.nome}}<br>
+      <h6 class="subdued">{{procData.procedimento}}</h6>
+    </div>
+
+    <div class="buttons">
+      <button class="button button-clear icon ion-close-circled ion-icon-right"
+        ng-click="fecharTelaEdtProcedimento()">
+    </div>
+
+  </ion-header-bar> -->
+
+  <ion-content>
+    <div class="item item-divider {{procData.alerta}} item-icon-right">
+      <h3>{{procData.nome}}</h3>
+      <h6 class="subdued">{{procData.procedimento}}</h6>
+      <i ng-click="fecharTelaEdtProcedimento()" class="icon ion-close-circled clicked"/>
+    </div>
+    <div style="center-img" class="item item-image">
+      <img class="foto" ng-src="{{pictureURL}}">
+      <div class="div-over-image">
+        <!-- <i class="icon ion-code-working"></i> -->
+      </div>
+    </div>
+
+  </ion-content>
+
+  <!-- <ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="buttons">
+      <button class="button">Left Button</button>
+    </div>
+    <h1 class="title">Title!</h1>
+    <div class="buttons" ng-click="doSomething()">
+      <button class="button">Right Button</button>
+    </div>
+  </ion-footer-bar> -->
+</ion-modal-view>

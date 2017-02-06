@@ -1,0 +1,16 @@
+<ion-view title="Rascunhos">
+  <ion-content>
+    <ion-list>
+        <ion-item class="item-remove-animate"
+          ng-repeat="proc in rascunhos" href="#/app/rascunhos/{{proc.id}}">
+          <div class="item-avatar">
+            <img class="tag" ng-src="{{proc.foto}}">
+            <label>{{proc.nome}}</label>
+            <h3>{{proc.procedimento}}</h4>
+            <h5>{{proc.numeroPedido}}</h5>
+            <h6 class="subdued">Rascunho salvo em {{proc.dataInclusao}}</h6>
+          </div>
+        </ion-item>
+    <ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view title="Procedimentos">
+  <ion-nav-buttons vertical-align="center" side="right">
+    <button class="button button-clear icon ion-person-add"
+      ng-click="abrirTelaIncluirProcedimento()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+        <ion-item class="item-remove-animate"
+          ng-repeat="proc in procedimentos" ng-click="abrirTelaEditarProcedimento(proc)">
+          <div class="item-avatar {{proc.alerta}}">
+            <img class="tag {{proc.alerta}}" ng-src="{{proc.foto}}">
+            <label>{{proc.nome}}</label>
+            <h3>{{proc.procedimento}}</h4>
+            <h5>{{proc.numeroPedido}}</h5>
+            <h6 class="subdued">{{proc.ultimaAtualizacao}}</h6>
+          </div>
+        </ion-item>
+    <ion-list>
+  </ion-content>
+</ion-view>

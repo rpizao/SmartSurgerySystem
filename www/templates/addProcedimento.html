@@ -1,0 +1,109 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-light">
+    <h1 class="title">Solicitar Procedimento</h1>
+    <div class="buttons">
+      <button class="button button-clear icon ion-close-circled"
+        ng-click="fecharTelaIncluirProcedimento()">
+    </div>
+
+  </ion-header-bar>
+
+  <ion-content>
+    <form name="procForm" novalidate ng-submit="addProcedimento()">
+      <div class="list">
+        <div class="item item-divider">
+         Paciente
+        </div>
+        <div style="height: 150px; width: 100%;">
+          <div class="center-img">
+            <img class="clicked" ng-src="{{pictureURL}}" ng-click="takePicture()"/>
+            <!-- <i ng-show="!procForm.nome.$valid" class="icon">
+              <img ng-src="img/error.png"></img>
+            </i> -->
+          </div>
+        </div>
+
+        <label class="item item-input item-icon-right">
+          <span class="input-label">Nome</span>
+          <input type="text" name="nome" ng-model="procData.nome"
+            placeholder="João Silva" required>
+          <i ng-show="procForm.nome.$dirty && procForm.nome.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+          <!-- <i ng-show="procForm.nome.$dirty && procForm.nome.$invalid" style="color:#d72828" class="icon ion-alert-circled"/> -->
+        </label>
+
+        <label class="item item-input item-icon-right">
+          <span class="input-label">Nascimento</span>
+          <input type="text" name="dtNasc" ng-model="procData.dtNasc"
+            placeholder="01/01/1980" required to-validate mask="99/99/9999">
+          <i ng-show="procForm.dtNasc.$dirty && procForm.dtNasc.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+
+        <label class="item item-input item-icon-right">
+          <span class="input-label">C.P.F.</span>
+          <input type="text" name="cpf" ng-model="procData.cpf"
+            placeholder="999.999.999-99"
+            required to-validate>
+          <i ng-show="procForm.cpf.$dirty && procForm.cpf.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+        <label class="item item-input item-icon-right">
+          <span class="input-label">Filiação (Mãe)</span>
+          <input type="text" name="mae" ng-model="procData.mae"
+            placeholder="Maria Silva" required>
+          <i ng-show="procForm.mae.$dirty && procForm.mae.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+        <label class="item item-input item-icon-right">
+          <span class="input-label">Telefone</span>
+          <input type="text" name="telefone"
+            ng-model="procData.telefone"
+            placeholder="(99)9999-9999"
+            required to-validate>
+          <i ng-show="procForm.telefone.$dirty && procForm.telefone.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+        <label class="item item-input item-icon-right">
+          <span class="input-label">E-mail</span>
+          <input type="email" name="email" ng-model="procData.email" placeholder="joao@mail.com">
+          <i ng-show="procForm.email.$dirty && procForm.email.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+        <label class="item item-input item-stacked-label item-icon-right">
+          <span class="input-label">
+            Marca Ótica ou Cart. da Operadora
+          </span>
+          <input type="text" ng-model="procData.identificacaoPlano"
+            placeholder="XXX99999" to-validate>
+        </label>
+
+        <div class="item item-divider">
+          Procedimento
+        </div>
+        <!-- <label class="item item-input">
+          <span class="input-label">Sub-grupo / Procedimento</span>
+          <input ng-model="procData.procedimento"/>
+        </label> -->
+        <label class="item item-input item-icon-right">
+          <span class="input-label">Pedido OPME</span>
+          <input type="text" name="numeroPedido" ng-model="procData.numeroPedido"
+            placeholder="XXX-9999999"
+            to-validate>
+          <i ng-show="procForm.numeroPedido.$dirty && procForm.numeroPedido.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+        <label class="item item-input item-select item-icon-right">
+          <span class="input-label">Hospital</span>
+          <select ng-model="procData.hospital"
+            ng-options="hosp.desc_hosp as hosp.desc_hosp for hosp in hospitais"
+            name="hospital">
+          </select>
+          <i ng-show="procForm.hospital.$dirty && procForm.hospital.$invalid" style="color:#d72828" class="icon ion-alert-circled"/>
+        </label>
+
+        <label class="item">
+          <button ng-disabled="!procForm.$valid" class="button icon-left ion-android-checkmark-circle
+           button-block button-positive" type="submit">Salvar</button>
+        </label>
+
+
+      </div>
+    </form>
+
+  </ion-content>
+
+</ion-modal-view>
